@@ -20,23 +20,27 @@ const fs=require('fs');
 // }
 //})
 
-console.log("before");
-fs.readFile("./contents/RenameFile.txt","utf-8",(err,data)=>{
-    if(err){
-        console.log(err);
-    }else {
-        console.log(data);
-        fs.appendFile("./contents/RenameFile.txt","Is this an Asynchronous function ?",(err)=>{
-            console.log(err);
-        });
-        fs.readFile("./contents/RenameFile.txt","utf-8",(err,data)=>{
-            if(err){
-                console.log(err);
-            }else {
-                console.log(data);
-                
-            }
-        })
-    }
+//console.log("before");
+//fs.readFile("./contents/RenameFile.txt","utf-8",(err,data)=>{
+//    if(err){
+//        console.log(err);
+//    }else {
+//        console.log(data);
+//        fs.appendFile("./contents/RenameFile.txt","Is this an Asynchronous function ?",(err)=>{
+//            console.log(err);
+//        });
+//        fs.readFile("./contents/RenameFile.txt","utf-8",(err,data)=>{
+//            if(err){
+//                console.log(err);
+//            }else {
+//                console.log(data);
+//                
+//            }
+//        })
+//    }
+//})
+//console.log("after");
+fs.unlink("./contents/RenameFile.txt",(err)=>{
+    if(!err) {console.log("deleted Successfull !");}
+    
 })
-console.log("after");
